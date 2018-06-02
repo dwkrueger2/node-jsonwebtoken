@@ -114,6 +114,10 @@ jwt.sign({
 
 ### jwt.verify(token, secretOrPublicKey, [options, callback])
 
+The verify method examines the value of the token object, decrypts it using the secretOrPublicKey, then calls the callback (if supplied) or returns an sycronous result.  
+     returns: 1) `null` if decryption of token matches `secretOrPublicKey` and other `options`
+              2) an error object with { JsonWebTokenError: `error msg` }
+
 (Asynchronous) If a callback is supplied, function acts asynchronously. The callback is called with the decoded payload if the signature is valid and optional expiration, audience, or issuer are valid. If not, it will be called with the error.
 
 (Synchronous) If a callback is not supplied, function acts synchronously. Returns the payload decoded if the signature is valid and optional expiration, audience, or issuer are valid. If not, it will throw the error.
